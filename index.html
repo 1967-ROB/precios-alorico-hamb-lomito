@@ -3,7 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lomitos - Menú Alo Rico</title>
+  <title>Menú Alorico Lomitos</title>
+  <link rel="stylesheet" href="style-lomitos.css" />
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo" class="logo" />
+    <h1>Menú Alorico Lomitos</h1>
+    <img src="Repartidor.png" alt="Repartidor" class="icono" />
+  </header>
+
+  <div class="menu-container" id="menu"></div>
+
+  <a href="https://wa.me/595971891251?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20lomitos" class="whatsapp-float" target="_blank">
+    🛵 Pedir por WhatsApp
+  </a>
+
+  <script>
+    // Cargar productos desde precios.json
+    fetch('precios.json')
+      .then(response => response.json())
+      .then(data => {
+        const menuContainer = document.getElementById('menu');
+        Object.keys(data).forEach(key => {
+          const producto = data[key];
+          if (producto.precio > 0) {
+            const div = document.createElement('div');
+            div.className = 'product';
+            div.innerHTML = `
+              <img src="lomitos/${producto.imagen}" alt="${key}" />
+              <h3>${key}</h3>
+              <p>${producto.ingredientes}</p>
+              <p><strong>${producto.precio.toLocaleString()} Gs</strong></p>
+            `;
+            menuContainer.appendChild(div);
+          }
+        });
+      })
+      .catch(error => {
+        console.error('Error al cargar precios:', error);
+      });
+  </script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,31 +53,37 @@
       margin: 0;
       padding: 0;
     }
+
     header {
       margin-top: 20px;
     }
+
     header img.logo {
       width: 120px;
       height: auto;
     }
+
     header h1 {
       font-size: 28px;
       color: #c24a00;
       margin: 10px 0 5px;
     }
+
     header img.icono {
       width: 60px;
       height: auto;
       margin-bottom: 10px;
     }
+
     .menu-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       padding: 20px;
     }
+
     .product {
-      width: 180px;
+      width: 200px;
       background: white;
       margin: 15px;
       border-radius: 10px;
@@ -44,60 +91,46 @@
       cursor: pointer;
       transition: transform 0.2s;
     }
+
     .product:hover {
       transform: scale(1.03);
     }
+
     .product img {
       width: 100%;
       height: 140px;
       object-fit: cover;
       border-radius: 10px 10px 0 0;
     }
+
     .product h3 {
       margin: 10px 0 5px;
       font-size: 16px;
     }
+
     .product p {
       margin: 0 0 10px;
       color: #444;
       font-weight: bold;
     }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .whatsapp-float:hover {
+      background-color: #1ebd5b;
+    }
   </style>
-</head>
-<body>
-  <header>
-    <img src="https://raw.githubusercontent.com/1967-ROB/precios-alorico-hamb-lomito/main/logo.png" alt="Logo" class="logo" />
-    <h1>Menú de Lomitos</h1>
-    <img src="https://raw.githubusercontent.com/1967-ROB/precios-alorico-hamb-lomito/main/icono.png" alt="Ícono" class="icono" />
-  </header>
-  <div id="menu" class="menu-container"></div>
-
-  <script>
-    const URL_JSON = "https://raw.githubusercontent.com/1967-ROB/precios-alorico-hamb-lomito/main/precios.json";
-    const URL_IMAGENES = "https://raw.githubusercontent.com/1967-ROB/precios-alorico-hamb-lomito/main/img-lomitos/";
-
-    fetch(URL_JSON)
-      .then(res => res.json())
-      .then(data => {
-        const contenedor = document.getElementById("menu");
-        Object.keys(data).forEach(nombre => {
-          const item = data[nombre];
-          if (item.precio > 0) {
-            const div = document.createElement("div");
-            div.className = "product";
-            div.innerHTML = `
-              <img src="${URL_IMAGENES}${item.imagen}" alt="${nombre}" />
-              <h3>${nombre}</h3>
-              <p>Gs ${item.precio.toLocaleString()}</p>
-            `;
-            contenedor.appendChild(div);
-          }
-        });
-      })
-      .catch(err => {
-        document.getElementById("menu").innerHTML = "<p>Error al cargar el menú.</p>";
-        console.error("Error:", err);
-      });
-  </script>
 </body>
 </html>
