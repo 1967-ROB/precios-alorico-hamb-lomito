@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menú de Lomitos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Menú de Lomitos</h1>
+  <div id="menu" class="menu-container"></div>
+  <script>
+    async function cargarMenu() {
+      const res = await fetch("https://raw.githubusercontent.com/1967-ROB/precios-alorico-hamb-lomito/main/precios.json");
+      const data = await res.json();
+      const contenedor = document.getElementById("menu");
+
+      Object.entries(data).forEach(([nombre, info]) => {
+        if (info.precio > 0) {
+          const card = document.createElement("div");
+          card.className = "menu-item";
+          card.innerHTML = `
+            <img src="lomitos/${info.imagen}" alt="${nombre}">
+            <h2>${nombre}</h2>
+            <p>${info.ingredientes}</p>
+            <p class="precio">${info.precio.toLocaleString()} Gs</p>
+          `;
+          contenedor.appendChild(card);
+        }
+      });
+    }
+
+    cargarMenu();
+  </script>
+</body>
+</html>
