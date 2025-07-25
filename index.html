@@ -3,201 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Menú Alorico Lomitos</title>
+  <title>Menú de Lomitos</title>
   <link rel="stylesheet" href="style-lomitos.css" />
 </head>
 <body>
   <header>
     <img src="logo.png" alt="Logo" class="logo" />
-    <h1>Menú Alorico Lomitos</h1>
+    <h1>Menú de Lomitos</h1>
     <img src="Repartidor.png" alt="Repartidor" class="icono" />
   </header>
 
-  <div class="menu-container" id="menu"></div>
+  <div class="menu-container" id="menu-container"></div>
 
-  <div class="pedido-container" id="pedido">
-    <h2>Mi Pedido</h2>
-    <ul id="pedido-lista"></ul>
-    <button id="borrarPedido" class="btn-rojo">Borrar todo</button>
-    <a id="enviarPedido" class="btn-verde" target="_blank">Enviar pedido</a>
+  <!-- Popup para seleccionar cantidad -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h2 id="popup-title"></h2>
+      <label for="cantidad">Cantidad:</label>
+      <input type="number" id="cantidad" value="1" min="1" />
+      <div class="popup-buttons">
+        <button id="confirmar-btn">Agregar</button>
+        <button onclick="cerrarPopup()">Cancelar</button>
+      </div>
+    </div>
   </div>
 
-  <script>
-    let pedido = [];
+  <!-- Panel de pedido -->
+  <div id="pedido" class="pedido">
+    <h3>Mi Pedido</h3>
+    <ul id="lista-pedido"></ul>
+    <button class="borrar" onclick="borrarPedido()">Borrar todo</button>
+    <button class="enviar" onclick="enviarPedido()">Enviar pedido</button>
+  </div>
 
-    function renderPedido() {
-      const lista = document.getElementById('pedido-lista');
-      lista.innerHTML = '';
-      pedido.forEach((item, index) => {
-        const li = document.createElement('li');
-        li.textContent = `${item}`;
-        lista.appendChild(li);
-      });
-
-      const link = document.getElementById('enviarPedido');
-      const mensaje = encodeURIComponent("Hola, quiero pedir:\n\n" + pedido.join('\n'));
-      link.href = `https://wa.me/595971891251?text=${mensaje}`;
-    }
-
-    function agregarPedido(nombre) {
-      pedido.push(nombre);
-      renderPedido();
-    }
-
-    document.getElementById('borrarPedido').addEventListener('click', () => {
-      pedido = [];
-      renderPedido();
-    });
-
-    fetch('precios.json')
-      .then(response => response.json())
-      .then(data => {
-        const menuContainer = document.getElementById('menu');
-        Object.keys(data).forEach(key => {
-          const producto = data[key];
-          if (producto.precio > 0) {
-            const div = document.createElement('div');
-            div.className = 'product';
-            div.innerHTML = `
-              <img src="lomitos/${producto.imagen}" alt="${key}" />
-              <h3>${key}</h3>
-              <p>${producto.ingredientes}</p>
-              <p><strong>${producto.precio.toLocaleString()} Gs</strong></p>
-              <button onclick="agregarPedido('${key} - ${producto.precio.toLocaleString()} Gs')">Agregar</button>
-            `;
-            menuContainer.appendChild(div);
-          }
-        });
-      })
-      .catch(error => {
-        console.error('Error al cargar precios:', error);
-      });
-  </script>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fefaf0;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      margin-top: 20px;
-    }
-
-    header img.logo {
-      width: 120px;
-      height: auto;
-    }
-
-    header h1 {
-      font-size: 28px;
-      color: #c24a00;
-      margin: 10px 0 5px;
-    }
-
-    header img.icono {
-      width: 60px;
-      height: auto;
-      margin-bottom: 10px;
-    }
-
-    .menu-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .product {
-      width: 200px;
-      background: white;
-      margin: 15px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-    }
-
-    .product:hover {
-      transform: scale(1.03);
-    }
-
-    .product img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 10px 10px 0 0;
-    }
-
-    .product h3 {
-      margin: 10px 0 5px;
-      font-size: 16px;
-    }
-
-    .product p {
-      margin: 0 0 10px;
-      color: #444;
-      font-weight: bold;
-    }
-
-    .product button {
-      margin-bottom: 10px;
-      padding: 6px 10px;
-      background-color: #ff9900;
-      border: none;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-
-    .pedido-container {
-      margin-top: 30px;
-      padding: 20px;
-      background-color: #fff;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-      border-top: 3px solid orange;
-    }
-
-    .pedido-container h2 {
-      margin-bottom: 10px;
-    }
-
-    .pedido-container ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-
-    .btn-rojo {
-      background-color: red;
-      color: white;
-      padding: 8px 16px;
-      margin: 5px;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .btn-verde {
-      background-color: green;
-      color: white;
-      padding: 8px 16px;
-      margin: 5px;
-      border-radius: 6px;
-      font-weight: bold;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .btn-verde:hover {
-      background-color: darkgreen;
-    }
-  </style>
+  <script src="script-lomitos.js"></script>
 </body>
 </html>
