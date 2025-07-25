@@ -15,12 +15,40 @@
 
   <div class="menu-container" id="menu"></div>
 
-  <a href="https://wa.me/595971891251?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20lomitos" class="whatsapp-float" target="_blank">
-    🛵 Pedir por WhatsApp
-  </a>
+  <div class="pedido-container" id="pedido">
+    <h2>Mi Pedido</h2>
+    <ul id="pedido-lista"></ul>
+    <button id="borrarPedido" class="btn-rojo">Borrar todo</button>
+    <a id="enviarPedido" class="btn-verde" target="_blank">Enviar pedido</a>
+  </div>
 
   <script>
-    // Cargar productos desde precios.json
+    let pedido = [];
+
+    function renderPedido() {
+      const lista = document.getElementById('pedido-lista');
+      lista.innerHTML = '';
+      pedido.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${item}`;
+        lista.appendChild(li);
+      });
+
+      const link = document.getElementById('enviarPedido');
+      const mensaje = encodeURIComponent("Hola, quiero pedir:\n\n" + pedido.join('\n'));
+      link.href = `https://wa.me/595971891251?text=${mensaje}`;
+    }
+
+    function agregarPedido(nombre) {
+      pedido.push(nombre);
+      renderPedido();
+    }
+
+    document.getElementById('borrarPedido').addEventListener('click', () => {
+      pedido = [];
+      renderPedido();
+    });
+
     fetch('precios.json')
       .then(response => response.json())
       .then(data => {
@@ -35,6 +63,7 @@
               <h3>${key}</h3>
               <p>${producto.ingredientes}</p>
               <p><strong>${producto.precio.toLocaleString()} Gs</strong></p>
+              <button onclick="agregarPedido('${key} - ${producto.precio.toLocaleString()} Gs')">Agregar</button>
             `;
             menuContainer.appendChild(div);
           }
@@ -88,7 +117,6 @@
       margin: 15px;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      cursor: pointer;
       transition: transform 0.2s;
     }
 
@@ -114,22 +142,61 @@
       font-weight: bold;
     }
 
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
+    .product button {
+      margin-bottom: 10px;
+      padding: 6px 10px;
+      background-color: #ff9900;
+      border: none;
       color: white;
-      padding: 12px 18px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 16px;
       font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      cursor: pointer;
+      border-radius: 4px;
     }
 
-    .whatsapp-float:hover {
-      background-color: #1ebd5b;
+    .pedido-container {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #fff;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      border-top: 3px solid orange;
+    }
+
+    .pedido-container h2 {
+      margin-bottom: 10px;
+    }
+
+    .pedido-container ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+
+    .btn-rojo {
+      background-color: red;
+      color: white;
+      padding: 8px 16px;
+      margin: 5px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn-verde {
+      background-color: green;
+      color: white;
+      padding: 8px 16px;
+      margin: 5px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-verde:hover {
+      background-color: darkgreen;
     }
   </style>
 </body>
