@@ -9,13 +9,13 @@
 <body>
   <header>
     <img src="logo.png" alt="Logo" class="logo" />
-    <h1>Menú de Lomitos</h1>
+    <h1>Menú Alorico Lomitos</h1>
     <img src="Repartidor.png" alt="Repartidor" class="icono" />
   </header>
 
   <div class="menu-container" id="menu-container"></div>
 
-  <!-- Popup para seleccionar cantidad -->
+  <!-- Popup de cantidad -->
   <div id="popup" class="popup">
     <div class="popup-content">
       <h2 id="popup-title"></h2>
@@ -27,6 +27,9 @@
       </div>
     </div>
   </div>
+
+  <!-- Fondo oscuro -->
+  <div id="overlay" class="overlay" onclick="cerrarPopup()"></div>
 
   <!-- Panel de pedido -->
   <div id="pedido" class="pedido">
