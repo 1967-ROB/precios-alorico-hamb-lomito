@@ -1,149 +1,30 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #fefaf0;
+  font-family: sans-serif;
+  background: #fff;
+  margin: 20px;
   text-align: center;
-  margin: 0;
-  padding: 0;
 }
 
-header {
-  margin-top: 20px;
-}
-
-header img.logo {
-  width: 120px;
-  height: auto;
-}
-
-header h1 {
-  font-size: 28px;
-  color: #c24a00;
-  margin: 10px 0 5px;
-}
-
-header img.icono {
-  width: 60px;
-  height: auto;
-  margin-bottom: 10px;
+h1 {
+  color: red;
 }
 
 .menu-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 20px;
+  margin-top: 30px;
 }
 
-.product {
-  width: 180px;
-  background: white;
-  margin: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  cursor: pointer;
-  transition: transform 0.2s;
+.producto {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
 }
 
-.product:hover {
-  transform: scale(1.03);
-}
-
-.product img {
+.producto img {
   width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
-}
-
-.product h3 {
-  margin: 10px 0 5px;
-  font-size: 16px;
-}
-
-.product p {
-  margin: 0 0 10px;
-  color: #444;
-  font-weight: bold;
-}
-
-#pedido {
-  background: white;
-  margin: 20px auto;
-  padding: 15px;
-  max-width: 400px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-#pedido h2 {
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-button {
-  padding: 8px 15px;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 5px;
-}
-
-button.agregar {
-  background-color: #ff8800;
-  color: white;
-}
-
-button.borrar {
-  background-color: red;
-  color: white;
-}
-
-button.enviar {
-  background-color: green;
-  color: white;
-}
-
-.popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  z-index: 10;
-  display: none;
-}
-
-.popup-buttons {
-  margin-top: 15px;
-}
-
-.popup-buttons button {
-  margin: 0 10px;
-}
-
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  z-index: 9;
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .product {
-    width: 45%;
-  }
-}
-
-@media (max-width: 480px) {
-  .product {
-    width: 90%;
-  }
+  border-radius: 8px;
 }
