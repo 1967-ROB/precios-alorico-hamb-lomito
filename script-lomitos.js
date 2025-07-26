@@ -1,7 +1,7 @@
 fetch('/data/precios.json')
   .then(response => response.json())
   .then(data => {
-    const menu = document.getElementById('menu');
+const menu = document.getElementById('menu-container');
     Object.entries(data).forEach(([nombre, item]) => {
       const div = document.createElement('div');
       div.className = 'producto';
