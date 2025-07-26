@@ -113,3 +113,12 @@ header {
 }
 .borrar { background-color: red; color: white; }
 .whatsapp { background-color: green; color: white; }
+.menu-container {
+  padding-bottom: 200px; /* Para que no tape el pedido flotante */
+}
+
+@media screen and (max-width: 768px) {
+  .menu-container {
+    padding-bottom: 260px; /* Más espacio en móvil */
+  }
+}
