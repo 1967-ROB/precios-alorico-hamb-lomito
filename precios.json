@@ -1,116 +1,78 @@
 {
-  "Super pancho": {
-    "categoria": "lomito",
-    "precio": 10000,
-    "ingredientes": "Pan, salchicha",
-    "imagen": "super pancho.jpg"
-  },
-  "Super pancho especial": {
-    "categoria": "lomito",
-    "precio": 15000,
-    "ingredientes": "Pan, salchicha, queso fundido, panceta",
-    "imagen": "super pancho especial.jpg"
-  },
-  "Sándwich de lomito": {
-    "categoria": "lomito",
-    "precio": 28000,
-    "ingredientes": "Pan, carne, jamón, queso, huevo, panceta, repollo, tomate",
-    "imagen": "sandwich-lomito.jpg"
-  },
-  "Lomito árabe mixto": {
-    "categoria": "lomito",
-    "precio": 28000,
-    "ingredientes": "Pan árabe, carne picada, salsa de ajo, repollo, tomate",
-    "imagen": "lomito-arabe-mixto.jpg"
-  },
-  "Lomito árabe de pollo": {
-    "categoria": "lomito",
-    "precio": 27000,
-    "ingredientes": "Pan árabe, pollo picado, salsa de ajo, repollo, tomate",
-    "imagen": "arabe mixto.jpg"
-  },
-  "Lomito árabe de carne": {
-    "categoria": "lomito",
-    "precio": 30000,
-    "ingredientes": "Pan árabe, carne lomito picada, salsa de ajo, repollo, tomate",
-    "imagen": "lomito-arabe-carne.jpg"
-  },
   "Papas fritas": {
-    "categoria": "fritas",
     "precio": 12000,
-    "ingredientes": "Papas fritas",
-    "imagen": "papas fritas.jpg"
+    "ingredientes": ""
   },
-  "Aros de cebolla": {
-    "categoria": "fritas",
+  "Aros de Cebolla": {
     "precio": 12000,
-    "ingredientes": "Aros de cebolla fritos",
-    "imagen": "aros de cebolla.jpg"
+    "ingredientes": ""
   },
   "Bolitas de papas": {
-    "categoria": "fritas",
     "precio": 13000,
-    "ingredientes": "Bolitas de papas fritas",
-    "imagen": "bolitas de papas.jpg"
+    "ingredientes": ""
   },
-  "Papas con cheddar": {
-    "categoria": "fritas",
+  "Papas con Cheddar": {
     "precio": 20000,
-    "ingredientes": "Papas fritas con salsa cheddar",
-    "imagen": "papa con cheddar.jpg"
+    "ingredientes": ""
+  },
+  "Super pancho": {
+    "precio": 10000,
+    "ingredientes": ""
+  },
+  "Super pancho especial": {
+    "precio": 15000,
+    "ingredientes": "Queso fundido con panceta"
+  },
+  "Sándwich de lomito": {
+    "precio": 28000,
+    "ingredientes": "Pan, carne, jamón, queso, huevo, panceta, repollo, tomate"
+  },
+  "Lomito Árabe Mixto": {
+    "precio": 28000,
+    "ingredientes": "Pan árabe, carne picada, salsa de ajo, repollo, tomate"
+  },
+  "Lomito Árabe de pollo": {
+    "precio": 27000,
+    "ingredientes": "Pan árabe, pollo picado, salsa de ajo, repollo, tomate"
+  },
+  "Lomito Árabe de carne": {
+    "precio": 30000,
+    "ingredientes": "Pan árabe, carne de lomito picada, salsa de ajo, repollo, tomate"
   },
   "Quesadilla": {
-    "categoria": "especial",
     "precio": 32000,
-    "ingredientes": "Queso fundido, carne, jamón, repollo, tomate, salsa de queso",
-    "imagen": "quesadilla.jpg"
+    "ingredientes": "Pan rapiditas con queso fundido, carne, jamón, repollo, tomate y salsa de queso"
   },
-  "Lomipizza": {
-    "categoria": "especial",
+  "Lomipizza (Personal)": {
     "precio": 35000,
-    "ingredientes": "Pan lomito, queso, salsa de pizza, carne, huevo, panceta, repollo, tomate",
-    "imagen": "lomi pizza.jpg"
+    "ingredientes": "Pan lomito con queso y salsa de pizza, carne, huevo, panceta, repollo, tomate"
   },
   "Taco Paraguayo": {
-    "categoria": "especial",
-    "precio": 32000,
-    "ingredientes": "Carne lomito, cebolla, morrones, tomate, jamón, queso, pan tipo rapidita, salsa de queso",
-    "imagen": "taco paraguayo.jpg"
+    "precio": 35000,
+    "ingredientes": "Carne lomito, cebolla, morrones, tomates, jamón, queso, envuelto en pan rapidita y salsa de queso"
   },
   "Junior": {
-    "categoria": "hamburguesa",
     "precio": 17000,
-    "ingredientes": "Pan mega, carne, doble cheddar",
-    "imagen": "junior.jpg"
+    "ingredientes": "Pan mega, carne, doble cheddar"
   },
   "Mega": {
-    "categoria": "hamburguesa",
     "precio": 26000,
-    "ingredientes": "Pan brioche, doble carne, doble cheddar, huevo, panceta, repollo, tomate",
-    "imagen": "mega.jpg"
+    "ingredientes": "Pan brioche, doble carne, doble cheddar, huevo, panceta, repollo, tomate"
+  },
+  "La suprema": {
+    "precio": 34000,
+    "ingredientes": "Pan brioche, triple carne, triple Cheddar, huevo, panceta, cebolla caramelizada, tomate, repollo"
   },
   "Especial de la casa": {
-    "categoria": "hamburguesa",
     "precio": 18000,
-    "ingredientes": "Pan mega, carne, huevo, jamón, queso, pepinillo",
-    "imagen": "especial de la casa.jpg"
+    "ingredientes": "Pan mega, carne, huevo, jamón, queso, pepinillo"
   },
   "Hamburguesa chica": {
-    "categoria": "hamburguesa",
     "precio": 11000,
-    "ingredientes": "Pan, carne, jamón, queso, tomate",
-    "imagen": "hamburguesa chica.jpg"
+    "ingredientes": "Pan, huevos, carne, jamón, queso y tomate"
   },
   "Hamburguesa parrillera": {
-    "categoria": "hamburguesa",
     "precio": 18000,
-    "ingredientes": "Pan, carne, jamón, queso, huevo, repollo, tomate, panceta",
-    "imagen": "hamburguesa parrillera.jpg"
-  },
-  "Hamburguesa suprema": {
-    "categoria": "hamburguesa",
-    "precio": 20000,
-    "ingredientes": "Pan, carne, panceta, jamón, huevo, queso, tomate, lechuga",
-    "imagen": "suprema.jpg"
+    "ingredientes": "Pan, huevo, carne, jamón, queso, panceta, repollo y tomate"
   }
 }
