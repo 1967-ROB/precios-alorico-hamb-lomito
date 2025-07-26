@@ -1,78 +1,97 @@
 {
   "Papas fritas": {
     "precio": 12000,
-    "ingredientes": ""
+    "ingredientes": "",
+    "imagen": "papas fritas.jpg"
   },
   "Aros de Cebolla": {
     "precio": 12000,
-    "ingredientes": ""
+    "ingredientes": "",
+    "imagen": ""
   },
   "Bolitas de papas": {
     "precio": 13000,
-    "ingredientes": ""
+    "ingredientes": "",
+    "imagen": ""
   },
   "Papas con Cheddar": {
     "precio": 20000,
-    "ingredientes": ""
+    "ingredientes": "",
+    "imagen": "papa con cheddar.jpg"
   },
   "Super pancho": {
     "precio": 10000,
-    "ingredientes": ""
+    "ingredientes": "",
+    "imagen": "super pancho.jpg"
   },
   "Super pancho especial": {
     "precio": 15000,
-    "ingredientes": "Queso fundido con panceta"
+    "ingredientes": "Queso fundido con panceta",
+    "imagen": "super pancho especial.jpg"
   },
   "Sándwich de lomito": {
     "precio": 28000,
-    "ingredientes": "Pan, carne, jamón, queso, huevo, panceta, repollo, tomate"
+    "ingredientes": "Pan, carne, jamón, queso, huevo, panceta, repollo, tomate",
+    "imagen": "sandwich-lomito.jpg"
   },
   "Lomito Árabe Mixto": {
     "precio": 28000,
-    "ingredientes": "Pan árabe, carne picada, salsa de ajo, repollo, tomate"
+    "ingredientes": "Pan árabe, carne picada, salsa de ajo, repollo, tomate",
+    "imagen": "lomito-arabe-mixto.jpg"
   },
   "Lomito Árabe de pollo": {
     "precio": 27000,
-    "ingredientes": "Pan árabe, pollo picado, salsa de ajo, repollo, tomate"
+    "ingredientes": "Pan árabe, pollo picado, salsa de ajo, repollo, tomate",
+    "imagen": "arabe mixto.jpg"
   },
   "Lomito Árabe de carne": {
     "precio": 30000,
-    "ingredientes": "Pan árabe, carne de lomito picada, salsa de ajo, repollo, tomate"
+    "ingredientes": "Pan árabe, carne de lomito picada, salsa de ajo, repollo, tomate",
+    "imagen": "arabe mixto.jpg"
   },
   "Quesadilla": {
     "precio": 32000,
-    "ingredientes": "Pan rapiditas con queso fundido, carne, jamón, repollo, tomate y salsa de queso"
+    "ingredientes": "Pan rapiditas con queso fundido, carne, jamón, repollo, tomate y salsa de queso",
+    "imagen": "especial de la casa.jpg"
   },
   "Lomipizza (Personal)": {
     "precio": 35000,
-    "ingredientes": "Pan lomito con queso y salsa de pizza, carne, huevo, panceta, repollo, tomate"
+    "ingredientes": "Pan lomito con queso y salsa de pizza, carne, huevo, panceta, repollo, tomate",
+    "imagen": "lomi pizza.jpg"
   },
   "Taco Paraguayo": {
     "precio": 35000,
-    "ingredientes": "Carne lomito, cebolla, morrones, tomates, jamón, queso, envuelto en pan rapidita y salsa de queso"
+    "ingredientes": "Carne lomito, cebolla, morrones, tomates, jamón, queso, envuelto en pan rapidita y salsa de queso",
+    "imagen": "taco paraguayo.jpg"
   },
   "Junior": {
     "precio": 17000,
-    "ingredientes": "Pan mega, carne, doble cheddar"
+    "ingredientes": "Pan mega, carne, doble cheddar",
+    "imagen": ""
   },
   "Mega": {
     "precio": 26000,
-    "ingredientes": "Pan brioche, doble carne, doble cheddar, huevo, panceta, repollo, tomate"
+    "ingredientes": "Pan brioche, doble carne, doble cheddar, huevo, panceta, repollo, tomate",
+    "imagen": "mega.jpg"
   },
   "La suprema": {
     "precio": 34000,
-    "ingredientes": "Pan brioche, triple carne, triple Cheddar, huevo, panceta, cebolla caramelizada, tomate, repollo"
+    "ingredientes": "Pan brioche, triple carne, triple Cheddar, huevo, panceta, cebolla caramelizada, tomate, repollo",
+    "imagen": "suprema.jpg"
   },
   "Especial de la casa": {
     "precio": 18000,
-    "ingredientes": "Pan mega, carne, huevo, jamón, queso, pepinillo"
+    "ingredientes": "Pan mega, carne, huevo, jamón, queso, pepinillo",
+    "imagen": "especial de la casa.jpg"
   },
   "Hamburguesa chica": {
     "precio": 11000,
-    "ingredientes": "Pan, huevos, carne, jamón, queso y tomate"
+    "ingredientes": "Pan, huevos, carne, jamón, queso y tomate",
+    "imagen": ""
   },
   "Hamburguesa parrillera": {
     "precio": 18000,
-    "ingredientes": "Pan, huevo, carne, jamón, queso, panceta, repollo y tomate"
+    "ingredientes": "Pan, huevo, carne, jamón, queso, panceta, repollo y tomate",
+    "imagen": "hamburguesa parrillera.jpg"
   }
 }
